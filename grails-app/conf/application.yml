@@ -102,14 +102,14 @@ dataSource:
     jmxExport: true
     driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
     username: sa
-    password: '1209'
+    password: 'yourStrong(!)Password'
     logSql: true
 
 environments:
     development:
         dataSource:
             dbCreate: create-drop
-            url: jdbc:sqlserver://192.168.8.109:1433;databaseName=budgetfiangonana
+            url: jdbc:sqlserver://192.168.100.42:1433;databaseName=budgetfiangonana
     test:
         dataSource:
             dbCreate: update
