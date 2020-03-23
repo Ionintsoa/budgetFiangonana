@@ -10,13 +10,33 @@
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
 
     <asset:stylesheet src="application.css"/>
+    <asset:stylesheet src="vendor/bootstrap/css/bootstrap.min.css"/>
+    <asset:stylesheet src="vendor/bootstrap/css/style.css"/>
+    <asset:stylesheet src="libs/css/style.css"/>
+    <asset:stylesheet src="vendor/fonts/fontawesome/css/fontawesome-all.css"/>
+    <asset:stylesheet src="vendor/charts/chartist-bundle/chartist.css"/>
+    <asset:stylesheet src="vendor/charts/morris-bundle/morris.css"/>
+    <asset:stylesheet src="vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css"/>
+    <asset:stylesheet src="vendor/charts/c3charts/c3.css"/>
+    <asset:stylesheet src="vendor/fonts/flag-icon-css/flag-icon.min.css"/>
 
     <g:layoutHead/>
 </head>
 
 <body>
+    <div class="dashboard-main-wrapper">
+        <div class="dashboard-header">
+            <g:include view="include/header.gsp" />
+        </div>
+        <div class="nav-left-sidebar sidebar-dark">
+            <g:include view="include/menu.gsp" />
+        </div>
+        <div class="dashboard-wrapper">
+            <g:layoutBody/>
+        </div>
+    </div>
 
-<nav class="navbar navbar-expand-lg navbar-dark navbar-static-top" role="navigation">
+<%-- <nav class="navbar navbar-expand-lg navbar-dark navbar-static-top" role="navigation">
     <a class="navbar-brand" href="/#"><asset:image src="grails.svg" alt="Grails Logo"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,43 +48,14 @@
         </ul>
     </div>
 
-</nav>
+</nav> --%>
+    <g:include view="include/footer.gsp" />
 
-<g:layoutBody/>
-
-<div class="footer row" role="contentinfo">
-    <div class="col">
-        <a href="http://guides.grails.org" target="_blank">
-            <asset:image src="advancedgrails.svg" alt="Grails Guides" class="float-left"/>
-        </a>
-        <strong class="centered"><a href="http://guides.grails.org" target="_blank">Grails Guides</a></strong>
-        <p>Building your first Grails app? Looking to add security, or create a Single-Page-App? Check out the <a href="http://guides.grails.org" target="_blank">Grails Guides</a> for step-by-step tutorials.</p>
-
-    </div>
-    <div class="col">
-        <a href="http://docs.grails.org" target="_blank">
-            <asset:image src="documentation.svg" alt="Grails Documentation" class="float-left"/>
-        </a>
-        <strong class="centered"><a href="http://docs.grails.org" target="_blank">Documentation</a></strong>
-        <p>Ready to dig in? You can find in-depth documentation for all the features of Grails in the <a href="http://docs.grails.org" target="_blank">User Guide</a>.</p>
-
+    <div id="spinner" class="spinner" style="display:none;">
+        <g:message code="spinner.alt" default="Loading&hellip;"/>
     </div>
 
-    <div class="col">
-        <a href="https://grails-slack.cfapps.io" target="_blank">
-            <asset:image src="slack.svg" alt="Grails Slack" class="float-left"/>
-        </a>
-        <strong class="centered"><a href="https://grails-slack.cfapps.io" target="_blank">Join the Community</a></strong>
-        <p>Get feedback and share your experience with other Grails developers in the community <a href="https://grails-slack.cfapps.io" target="_blank">Slack channel</a>.</p>
-    </div>
-</div>
-
-
-<div id="spinner" class="spinner" style="display:none;">
-    <g:message code="spinner.alt" default="Loading&hellip;"/>
-</div>
-
-<asset:javascript src="application.js"/>
+    <asset:javascript src="application.js"/>
 
 </body>
 </html>
