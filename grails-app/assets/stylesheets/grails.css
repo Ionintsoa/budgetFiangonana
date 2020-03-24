@@ -526,7 +526,7 @@ h8 {
     position: relative;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 5%
+    /* padding: 0 5% */
 }
 
 .row:before, .row:after {
