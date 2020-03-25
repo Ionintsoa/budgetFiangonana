@@ -29,32 +29,32 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="card">
                     <div class="card-body">
-                        <form class="needs-validation" novalidate>
+                        <g:form class="needs-validation" controller="user" action="save">
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                    <label for="validationCustom01">Nom</label>
-                                    <input type="text" class="form-control" id="validationCustom01" placeholder="Nom">
+                                    <label for="firstName">Nom</label>
+                                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Nom">
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                    <label for="validationCustom01">Prénom</label>
-                                    <input type="text" class="form-control" id="validationCustom01" placeholder="Prénom">
+                                    <label for="lastName">Prénom</label>
+                                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Prénom">
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                    <label for="validationCustom01">Email</label>
-                                    <input type="text" class="form-control" id="validationCustom01" placeholder="Email">
+                                    <label for="emailAddress">Email</label>
+                                    <input type="text" class="form-control" id="emailAddress" name="emailAddress" placeholder="Email">
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                    <label for="validationCustom01">Mot de passe</label>
-                                    <input type="password" class="form-control" id="validationCustom01" placeholder="Email">
+                                    <label for="password">Mot de passe</label>
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Email">
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
@@ -64,7 +64,7 @@
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                                 <button class="btn btn-primary" type="submit">Enregistrer</button>
                             </div>
-                        </form>
+                        </g:form>
                     </div>
                 </div>
             </div>

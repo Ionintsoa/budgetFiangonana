@@ -11,7 +11,6 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
                     <h2 class="pageheader-title">Saisie mouvement </h2>
-                    <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
                     <div class="page-breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -29,37 +28,38 @@
             <!-- ============================================================== -->
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="card">
-                    <h5 class="card-header">Bootstrap Validation Form</h5>
                     <div class="card-body">
-                        <form class="needs-validation" novalidate>
+                        <g:form class="needs-validation" controller="mouvement" action="save">
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                                     <div class="form-group">
-                                        <label for="input-select">Caisse</label>
-                                        <select class="form-control" id="input-select">
-                                            <option>Caisse 1</option>
+                                        <label for="caisse">Caisse</label>
+                                        <select class="form-control" id="caisse" name="caisse">
+                                            <g:each in="${caisses}">
+                                                <option value="${it.id}">${it.label}</option>
+                                            </g:each>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                                     <div class="form-group">
-                                        <label for="input-select">Mouvement</label>
-                                        <select class="form-control" id="input-select">
-                                            <option>Entrée</option>
-                                            <option>Sortie</option>
+                                        <label for="typeMouvement">Mouvement</label>
+                                        <select class="form-control" id="typeMouvement" name="typeMouvement">
+                                            <option value="0">Entrée</option>
+                                            <option value="1">Sortie</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                    <label for="validationCustom01">Motif</label>
-                                    <input type="text" class="form-control" id="validationCustom01" placeholder="Motif">
+                                    <label for="motif">Motif</label>
+                                    <input type="text" class="form-control" id="motif" name="motif" placeholder="Motif">
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                    <label for="validationCustom01">Montant</label>
-                                    <input type="text" class="form-control" id="validationCustom01" placeholder="30 000">
+                                    <label for="montant">Montant</label>
+                                    <input type="text" class="form-control" id="montant" name="montant" placeholder="30 000">
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
@@ -69,7 +69,7 @@
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                                 <button class="btn btn-primary" type="submit">Enregistrer</button>
                             </div>
-                        </form>
+                        </g:form>
                     </div>
                 </div>
             </div>

@@ -11,7 +11,6 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
                     <h2 class="pageheader-title">Saisie mouvement </h2>
-                    <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
                     <div class="page-breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -29,7 +28,6 @@
             <!-- ============================================================== -->
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="card">
-                    <h5 class="card-header">Bootstrap Validation Form</h5>
                     <div class="card-body">
                         <form class="needs-validation" novalidate>
                             <div class="row">
@@ -37,7 +35,10 @@
                                     <div class="form-group">
                                         <label for="input-select">Caisse</label>
                                         <select class="form-control" id="input-select">
-                                            <option>Caisse 1</option>
+                                            <g:each in="${caisses}">
+                                                <option>Title: ${it.label}</option>
+                                            </g:each>
+                                            <%-- <option>Caisse 1</option> --%>
                                         </select>
                                     </div>
                                 </div>
