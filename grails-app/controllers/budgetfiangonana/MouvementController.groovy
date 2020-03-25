@@ -4,5 +4,5 @@ class MouvementController {
 
     def index() { }
 
-    def nouveau() { }
+    def create() { }
 }

@@ -5,7 +5,7 @@ class CompteUtilisateur {
     String lastName
     String emailAddress
     String password
-    String repeatPassword
+    // String repeatPassword
     boolean isValidated = false
     static hasMany = [mouvements: Mouvement]
 

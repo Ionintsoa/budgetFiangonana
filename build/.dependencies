@@ -46,6 +46,7 @@ dependencies:
 - file:/Users/ionintsoa/.gradle/caches/modules-2/files-2.1/org.grails.plugins/scaffolding/4.0.0.RC1/4e4537ba947b441bc02278781dc4d97be6420ac9/scaffolding-4.0.0.RC1.jar
 - file:/Users/ionintsoa/.gradle/caches/modules-2/files-2.1/org.grails/grails-datastore-gorm-hibernate5/7.0.2.RELEASE/8eef093f4574167a1d8af1747980046f84d92c6b/grails-datastore-gorm-hibernate5-7.0.2.RELEASE.jar
 - file:/Users/ionintsoa/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-core/5.4.0.Final/70ec4c8742c53bc018610ec001bd90837d54ee2b/hibernate-core-5.4.0.Final.jar
+- file:/Users/ionintsoa/.gradle/caches/modules-2/files-2.1/com.microsoft.sqlserver/mssql-jdbc/6.4.0.jre8/d35eaaa34e061d362977d88821bf08c0797af612/mssql-jdbc-6.4.0.jre8.jar
 - file:/Users/ionintsoa/.gradle/caches/modules-2/files-2.1/org.glassfish.web/el-impl/2.1.2-b03/6bab1211b6e6b191fdbf06067bd05d2f75a62ac0/el-impl-2.1.2-b03.jar
 - file:/Users/ionintsoa/.gradle/caches/modules-2/files-2.1/com.h2database/h2/1.4.199/7bf08152984ed8859740ae3f97fae6c72771ae45/h2-1.4.199.jar
 - file:/Users/ionintsoa/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-jdbc/9.0.30/7d5b1052b70b74eb9776cf552b512714aedffdbd/tomcat-jdbc-9.0.30.jar
