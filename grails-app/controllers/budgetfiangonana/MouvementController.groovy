@@ -10,20 +10,79 @@ class MouvementController {
     CaisseService caisseService
     MouvementService mouvementService
 
-    def index() { }
+    def index() { 
+        def listMouvement = mouvementService.getAll()
+        [mouvements: listMouvement ?: []]
+    }
 
     def create() { 
         def response = caisseService.getAll()
-        [caisses: response ?: []]
+        def pageContent = [
+            btnSaveText : "Enregistrer",
+            showCancelBtn : false,
+            formAction : "save"
+        ]
+        Mouvement mouvement = new Mouvement()
+        if(params.id) {
+            mouvement = mouvementService.getById(params.id)
+            if(mouvement.caisse.id > 0) {
+                pageContent.btnSaveText = "Modifier"
+                pageContent.showCancelBtn = true
+                pageContent.formAction = "update"
+            }
+        }
+        [caisses: response ?: [], mouvement: mouvement, pageContent : pageContent]
     }
 
     def save() {
-        Mouvement mouvement = new Mouvement(params)
-        // TO DO : id user tokony alaina avy ao am session
-        CompteUtilisateur user = new CompteUtilisateur()
-        user.id = 1;
-        mouvement.user = user;
-        mouvementService.save(mouvement);
-        redirect(action:"index");
+        try {
+            Mouvement mouvement = new Mouvement(params)
+            // TO DO : id user tokony alaina avy ao am session
+            CompteUtilisateur user = new CompteUtilisateur()
+            user.id = 1;
+            mouvement.user = user
+            mouvement.dateCreation = new Date()
+            mouvementService.save(mouvement)
+            redirect(action:"index")
+        } catch(Exception ex) {
+            render view: "/mouvement/create", model: this.getCreateData()
+        }
+    }
+
+    def update() {
+        Mouvement mouvement = null
+        try {
+            mouvement = new Mouvement(params)
+            // TO DO : id user tokony alaina avy ao am session
+            CompteUtilisateur user = new CompteUtilisateur()
+            user.id = 1;
+            mouvement.user = user
+            mouvement.dateCreation = new Date()
+            mouvementService.save(mouvement)
+            redirect(action:"index")
+        } catch (Exception ex) {
+            // println("ex   "+ex.)
+            ex.printStackTrace()
+            render view: "/mouvement/create", model: this.getCreateData(mouvement)
+        }
+    }
+
+    def getCreateData(Mouvement mouvement) {
+        def response = caisseService.getAll()
+        def pageContent = [
+            btnSaveText : "Enregistrer",
+            showCancelBtn : false,
+            formAction : "save"
+        ]
+        mouvement = mouvement != null ? mouvement : new Mouvement()
+        if(params.id) {
+            mouvement = mouvementService.getById(params.id)
+            if(mouvement.caisse.id > 0) {
+                pageContent.btnSaveText = "Modifier"
+                pageContent.showCancelBtn = true
+                pageContent.formAction = "update"
+            }
+        }
+        return [caisses: response ?: [], mouvement: mouvement, pageContent : pageContent]
     }
 }
