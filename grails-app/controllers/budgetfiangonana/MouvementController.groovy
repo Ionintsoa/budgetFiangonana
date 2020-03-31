@@ -19,6 +19,7 @@ class MouvementController {
         def response = caisseService.getAll()
         def pageContent = [
             btnSaveText : "Enregistrer",
+            btnSaveClass : "btn-success",
             showCancelBtn : false,
             formAction : "save"
         ]
@@ -29,6 +30,7 @@ class MouvementController {
                 pageContent.btnSaveText = "Modifier"
                 pageContent.showCancelBtn = true
                 pageContent.formAction = "update"
+                pageContent.btnSaveClass = "btn-primary"
             }
         }
         [caisses: response ?: [], mouvement: mouvement, pageContent : pageContent]
@@ -48,6 +50,16 @@ class MouvementController {
             render view: "/mouvement/create", model: this.getCreateData()
         }
     }
+    def delete() {
+        try {
+            if(params.id) {
+                mouvementService.delete(params.id)
+            }
+            redirect(action:"index")
+        } catch(Exception ex) {
+            render view: "/mouvement/create", model: this.getCreateData()
+        }
+    }
 
     def update() {
         Mouvement mouvement = null
@@ -58,7 +70,7 @@ class MouvementController {
             user.id = 1;
             mouvement.user = user
             mouvement.dateCreation = new Date()
-            mouvementService.save(mouvement)
+            mouvementService.edit(mouvement.id,mouvement)
             redirect(action:"index")
         } catch (Exception ex) {
             // println("ex   "+ex.)
@@ -71,6 +83,7 @@ class MouvementController {
         def response = caisseService.getAll()
         def pageContent = [
             btnSaveText : "Enregistrer",
+            btnSaveClass : "btn-success",
             showCancelBtn : false,
             formAction : "save"
         ]
@@ -81,6 +94,7 @@ class MouvementController {
                 pageContent.btnSaveText = "Modifier"
                 pageContent.showCancelBtn = true
                 pageContent.formAction = "update"
+                pageContent.btnSaveClass = "btn-primary"
             }
         }
         return [caisses: response ?: [], mouvement: mouvement, pageContent : pageContent]

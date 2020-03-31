@@ -14,7 +14,7 @@
                     <div id="submenu-1" class="collapse submenu" style="">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link" href="index.html">Nouveau</a>
+                                <a class="nav-link" href="/user/create">Nouveau</a>
                             </li>
                         </ul>
                     </div>
@@ -24,10 +24,10 @@
                     <div id="submenu-2" class="collapse submenu" style="">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link" href="pages/cards.html">Liste</a>
+                                <a class="nav-link" href="/mouvement">Liste</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="pages/general.html">Saisie</a>
+                                <a class="nav-link" href="/mouvement/create">Saisie</a>
                             </li>
                         </ul>
                     </div>

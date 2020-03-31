@@ -97,9 +97,10 @@
                             </div>
                             <br>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                <button class="btn btn-primary" type="submit">${pageContent.btnSaveText}</button>
+                                <button class="btn ${pageContent.btnSaveClass}" type="submit">${pageContent.btnSaveText}</button>
                                 <g:if test="${pageContent.showCancelBtn}">
-                                    <button class="btn btn-danger" type="button">Annuler</button>
+                                    <g:link action="delete" id="${mouvement.id}"><button class="btn btn-danger" type="button">Supprimer</button></g:link>
+                                    <g:link action="index"><button class="btn btn-warning" type="button">Annuler</button></g:link>
                                 </g:if>
                                 
                             </div>
