@@ -51,12 +51,12 @@
                                         <label for="typeMouvement">Mouvement</label>
                                         <select class="form-control" id="typeMouvement" name="typeMouvement">
                                             <g:if test="${mouvement.typeMouvement == 0}">
-                                                <option value="0" selected>Entrée</option>
-                                                <option value="1">Sortie</option>
+                                                <option value="0" selected>Crédit</option>
+                                                <option value="1">Débit</option>
                                             </g:if>
                                             <g:else>
-                                                <option value="0">Entrée</option>
-                                                <option value="1" selected>Sortie</option>
+                                                <option value="0">Crédit</option>
+                                                <option value="1" selected>Débit</option>
                                             </g:else>
                                         </select>
                                     </div>

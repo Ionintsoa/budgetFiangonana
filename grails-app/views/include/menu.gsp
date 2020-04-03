@@ -37,7 +37,7 @@
                     <div id="submenu-3" class="collapse submenu" style="">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link" href="pages/chart-c3.html">C3 Charts</a>
+                                <a class="nav-link" href="/mouvement/stats">Mouvement par caisse</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="pages/chart-chartist.html">Chartist Charts</a>

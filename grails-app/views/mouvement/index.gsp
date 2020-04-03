@@ -45,27 +45,9 @@
                                             <td>${it.montant} Ar</td>
                                             <td>${it.motif}</td>
                                             <td>${it.user.firstName}</td>
-                                            <td>17/03/2020</td>
+                                            <td><g:formatDate format="dd-MM-yyyy" date="${it.date}"/></td>
                                         </tr>
-                                        <%-- <option value="${it.id}">${it.label}</option> --%>
                                     </g:each>
-                                    <%-- <tr class="table-primary">
-                                        <th scope="row">1</th>
-                                        <td>40 000 Ar</td>
-                                        <td>Pierre</td>
-                                        <td>17/03/2020</td>
-                                    </tr>
-                                    <tr class="table-success">
-                                        <th scope="row">2</th>
-                                        <td>20 000 Ar</td>
-                                        <td>Thornton</td>
-                                        <td>16/03/2020</td>
-                                    </tr>
-                                    <tr class="table-secondary">
-                                        <th scope="row">3</th>
-                                        <td colspan="2">Larry the Bird</td>
-                                        <td>16/03/2020</td>
-                                    </tr> --%>
                                 </tbody>
                             </table>
                         </div>

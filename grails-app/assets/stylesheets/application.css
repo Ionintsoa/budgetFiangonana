@@ -13,3 +13,7 @@
 *= require mobile
 *= require_self
 */
+.search-filter {
+  display: flex;
+  align-items: center;
+}
